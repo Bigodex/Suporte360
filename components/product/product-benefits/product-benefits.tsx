@@ -9,7 +9,7 @@ export function ProductBenefits() {
   const allImages: Img[] = benefits.map((b) => b.image)
 
   return (
-    <section id="beneficios" className="px-4 py-10 sm:px-6 sm:py-16 lg:px-12 lg:py-24 bg-muted/40">
+    <section id="beneficios" className="px-4 py-10 sm:px-6 sm:py-16 lg:px-12 lg:py-16 bg-muted/40">
       <div className="max-w-6xl mx-auto">
         {/* Header responsivo */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">

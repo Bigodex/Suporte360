@@ -58,7 +58,7 @@ export function ImageGallery({
         </div>
 
         <div className="relative w-full overflow-hidden rounded-2xl sm:rounded-3xl bg-card border shadow-sm">
-          <div className="relative aspect-[4/5] sm:aspect-[3/4] lg:aspect-[3.05/5] bg-muted/40">
+          <div className="relative aspect-[4/5] sm:aspect-[3/4] lg:aspect-[3/5] bg-muted/40">
             <button
               type="button"
               onClick={onOpenLightbox}

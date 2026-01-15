@@ -88,22 +88,31 @@ export function ProductInfo({ quantity, setQuantity, whatsappUrl }: ProductInfoP
         </ul>
       </div>
 
-      <Card className="mt-2 sm:mt-3 w-full rounded-xl sm:rounded-2xl border bg-card shadow-sm backdrop-blur-sm shadow-md">
-        <CardHeader className="space-y-2 sm:space-y-3 p-3 sm:p-6">
-          <div className="flex flex-col gap-3 sm:gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div className="flex items-baseline gap-2 sm:gap-3 flex-wrap">
-              <span className="text-2xl sm:text-3xl font-extrabold text-foreground">R$ 24,90</span>
-              <span className="text-sm sm:text-base text-muted-foreground line-through">R$ 39,90</span>
+      <Card className="mt-2 w-full rounded-xl sm:rounded-2xl border bg-card shadow-sm">
+        <CardHeader className="p-4 sm:p-5 lg:p-6">
+          <div className="flex flex-col gap-3 sm:gap-4 sm:flex-row sm:items-center sm:justify-between">
+            {/* PREÇO */}
+            <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+              <span className="whitespace-nowrap text-[22px] leading-none sm:text-3xl lg:text-[34px] font-extrabold text-foreground">
+                R$ 24,90
+              </span>
+
+              <span className="whitespace-nowrap text-xs sm:text-sm lg:text-base text-muted-foreground line-through">
+                R$ 39,90
+              </span>
             </div>
 
-            <div className="w-full sm:w-auto sm:min-w-[240px]">
-              <p className="text-xs text-muted-foreground mb-1.5 sm:mb-2">Quantidade de unidades:</p>
+            {/* QUANTIDADE */}
+            <div className="flex items-center justify-between sm:justify-end gap-3 sm:gap-4 w-full sm:w-auto">
+              <span className="whitespace-nowrap text-xs sm:text-sm text-muted-foreground">
+                Quantidade
+              </span>
 
-              <div className="flex items-center justify-between rounded-xl sm:rounded-2xl bg-card p-1.5 sm:p-2 border border-foreground/10">
+              <div className="flex items-center rounded-xl border border-foreground/10 bg-background px-1.5 py-1 sm:px-2 sm:py-1.5">
                 <Button
                   type="button"
-                  variant="outline"
-                  className="h-8 w-8 sm:h-10 sm:w-10 rounded-lg sm:rounded-xl border text-sm sm:text-base bg-transparent"
+                  variant="ghost"
+                  className="h-8 w-8 sm:h-9 sm:w-9 rounded-lg text-base sm:text-lg leading-none"
                   onClick={() => setQuantity((q) => Math.max(1, q - 1))}
                   disabled={quantity === 1}
                   aria-label="Diminuir quantidade"
@@ -111,14 +120,14 @@ export function ProductInfo({ quantity, setQuantity, whatsappUrl }: ProductInfoP
                   −
                 </Button>
 
-                <span className="min-w-8 sm:min-w-10 text-center text-sm sm:text-base font-semibold text-foreground">
+                <span className="w-8 sm:w-10 text-center text-sm sm:text-base font-semibold text-foreground tabular-nums">
                   {quantity}
                 </span>
 
                 <Button
                   type="button"
-                  variant="outline"
-                  className="h-8 w-8 sm:h-10 sm:w-10 rounded-lg sm:rounded-xl text-sm sm:text-base bg-transparent"
+                  variant="ghost"
+                  className="h-8 w-8 sm:h-9 sm:w-9 rounded-lg text-base sm:text-lg leading-none"
                   onClick={() => setQuantity((q) => Math.min(5, q + 1))}
                   disabled={quantity === 5}
                   aria-label="Aumentar quantidade"
@@ -127,25 +136,6 @@ export function ProductInfo({ quantity, setQuantity, whatsappUrl }: ProductInfoP
                 </Button>
               </div>
             </div>
-          </div>
-
-          <div className="space-y-1">
-            <p className="text-xs text-muted-foreground">
-              Limite de <span className="font-semibold text-foreground">5</span> unidades por cliente.
-            </p>
-
-            {!isLimitReached ? (
-              <p className="text-xs text-muted-foreground">
-                Você selecionou <span className="font-semibold text-foreground">{quantity}</span> {itemLabel}.
-              </p>
-            ) : (
-              <div className="rounded-lg sm:rounded-xl border border-foreground/10 bg-[#F5F1E8] p-2 sm:p-3">
-                <p className="text-xs sm:text-sm font-semibold text-foreground">Limite atingido: 5 unidades.</p>
-                <p className="text-xs text-muted-foreground">
-                  É permitido comprar no máximo <span className="font-semibold text-foreground">5</span> por cliente.
-                </p>
-              </div>
-            )}
           </div>
         </CardHeader>
       </Card>

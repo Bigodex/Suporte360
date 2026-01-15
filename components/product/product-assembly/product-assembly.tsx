@@ -15,7 +15,7 @@ export function ProductAssembly({ videoSrc, videoEmbedUrl, tutorialImages }: Pro
   const { lightboxOpen, setLightboxOpen, activeIndex, openLightbox, onPrev, onNext, active } = useLightbox(images)
 
   return (
-    <section id="montagem" className="px-4 sm:px-6 lg:px-12 py-10 sm:py-16 lg:py-24 bg-muted/40">
+    <section id="montagem" className="px-4 sm:px-6 lg:px-12 py-10 sm:py-16 lg:py-14 bg-muted/40">
       <div className="max-w-6xl mx-auto">
         <AssemblyHeader />
 
